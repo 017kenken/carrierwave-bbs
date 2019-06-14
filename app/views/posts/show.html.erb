@@ -2,7 +2,9 @@
 
 <p>
   <strong>Image:</strong>
-  <%= image_tag @post.image.url %>
+  <% @post.images.each do |image| %>
+      <%= image_tag image.url %>
+  <% end %>  
 </p>
 
 <p>
