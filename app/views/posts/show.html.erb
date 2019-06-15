@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Category:</strong>
+  <%= @post.place %>
+</p>
+
+<p>
   <strong>Image:</strong>
   <% @post.images.each do |image| %>
       <%= image_tag image.url %>

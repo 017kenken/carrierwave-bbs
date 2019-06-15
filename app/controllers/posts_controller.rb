@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_place, only: [:new, :edit]
 
   # GET /posts
   # GET /posts.json
@@ -67,8 +68,12 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
+    def set_place
+      @places = Place.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:content, {images: []})
+      params.require(:post).permit(:content, :place, {images: []})
     end
 end

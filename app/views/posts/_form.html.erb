@@ -12,6 +12,12 @@
   <% end %>
 
   <div class="field">
+        <%= form.label :category %>
+        <%= form.collection_select(:place, @places, :name, :name, include_blank: true) %>
+      </div>
+
+
+  <div class="field">
     <%= form.label :image %>
     <%= form.file_field :images, multiple: true %>
   </div>
